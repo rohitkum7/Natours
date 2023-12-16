@@ -17,6 +17,8 @@ const hpp = require('hpp');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
+// Start Express App
+
 const app = express();
 
 app.set('view engine', 'pug');
