@@ -16,6 +16,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 // Start Express App
 
@@ -65,13 +66,15 @@ app.use(
   }),
 );
 
+app.use(compression());
+
 // Serving static Files
 app.use(express.static(`${__dirname}/public`)); // we can see for static files, (eg: on the Browser please type 127.0.0.1:3000/overview.html)
 
 //Test Middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.cookies);
+  // console.log(req.cookies);
   next();
 });
 

@@ -36,7 +36,7 @@ if (userDataForm)
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
+    // console.log(form);
 
     updateSettings(form, 'data');
   });
@@ -64,6 +64,6 @@ if (bookBtn)
     e.target.textContent = 'Processing...';
     const tourId = e.target.dataset.tourId;
     const pay = await bookTour(tourId);
-    console.log(pay);
+    // console.log(pay);
     window.location.href = pay.data.session.url;
   });
